@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/color_33">
+
+    <!--拨打状态-->
+    <RelativeLayout
+        android:id="@+id/rl_status_call2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--native-->
+        <FrameLayout
+            android:id="@+id/fl_renderer_native"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/iv_head_to"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_30"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_head_to" />
+
+        <TextView
+            android:id="@+id/tv_name_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_40"
+            android:layout_toRightOf="@id/iv_head_to"
+            android:text="谁谁谁"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/sp_28" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name_to"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_toRightOf="@id/iv_head_to"
+            android:text="等待对方接受邀请..."
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/sp_16" />
+
+        <!--挂断-->
+        <TextView
+            android:id="@+id/tv_dropped"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_80"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:drawablePadding="@dimen/dp_8"
+            android:drawableTop="@drawable/ic_handup"
+            android:gravity="center"
+            android:text="挂断"
+            android:textColor="@color/colorWhite" />
+
+    </RelativeLayout>
+
+    <!--接听状态-->
+    <RelativeLayout
+        android:id="@+id/rl_status_calling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <!--remote-->
+        <FrameLayout
+            android:id="@+id/fl_renderer_remote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--local-->
+        <FrameLayout
+            android:id="@+id/fl_renderer_local"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_160"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@color/color_96" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/tv_handup"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_80"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/dp_8"
+                android:drawableTop="@drawable/ic_handup"
+                android:gravity="center"
+                android:text="挂断"
+                android:textColor="@color/colorWhite" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--未接听状态-->
+    <RelativeLayout
+        android:id="@+id/rl_status_waiting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_head_from"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_80"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_head_from" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_head_from"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="XX请求与你视频通话"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/sp_20" />
+
+        <TextView
+            android:id="@+id/tv_accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:layout_marginLeft="@dimen/dp_44"
+            android:drawablePadding="@dimen/dp_8"
+            android:drawableTop="@drawable/ic_accept"
+            android:gravity="center"
+            android:text="接受"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_reject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_44"
+            android:drawablePadding="@dimen/dp_8"
+            android:drawableTop="@drawable/ic_reject"
+            android:gravity="center"
+            android:text="拒绝"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/sp_14" />
+
+    </RelativeLayout>
+</FrameLayout>
